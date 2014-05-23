@@ -37,4 +37,62 @@
         <item name="android:background">@color/gray_light</item>
     </style>
 
+<style name="Theme." parent="@android:style/Theme.Holo">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Transparent.</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.</item>
+        
+        
+    </style>
+
+    <style name="ActionBar.Solid." parent="@android:style/Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_solid_</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.</item>
+    </style>
+
+    <style name="ActionBar.Transparent." parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.</item>
+    </style>
+
+    <style name="PopupMenu." parent="@android:style/Widget.Holo.ListPopupWindow">
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_</item>	
+    </style>
+
+    <style name="DropDownListView." parent="@android:style/Widget.Holo.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_</item>
+    </style>
+
+    <style name="ActionBarTabStyle." parent="@android:style/Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_</item>
+    </style>
+
+    <style name="DropDownNav." parent="@android:style/Widget.Holo.Spinner">
+        <item name="android:background">@drawable/spinner_background_ab_</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_</item>
+    </style>
+    
+    <style name="ProgressBar." parent="@android:style/Widget.Holo.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode." parent="@android:style/Widget.Holo.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_</item>
+    </style>
+
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme..Widget" parent="@android:style/Theme.Holo">
+        <item name="android:popupMenuStyle">@style/PopupMenu.</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.</item>
+    </style>
+
 </resources>
