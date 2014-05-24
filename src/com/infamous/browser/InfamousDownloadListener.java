@@ -7,9 +7,9 @@ import android.util.Log;
 import android.webkit.DownloadListener;
 import android.webkit.URLUtil;
 
-public class LightningDownloadListener implements DownloadListener {
+public class InfamousDownloadListener implements DownloadListener {
 	private Activity mActivity;
-	LightningDownloadListener(Activity activity){
+	InfamousDownloadListener(Activity activity){
 		mActivity = activity;
 	}
 	
@@ -41,7 +41,7 @@ public class LightningDownloadListener implements DownloadListener {
 						dialogClickListener)
 				.setNegativeButton(mActivity.getResources().getString(R.string.action_cancel), dialogClickListener)
 				.show();
-		Log.i("Lightning", "Downloading" + fileName);
+		Log.i("Infamous", "Downloading" + fileName);
 		
 	}
 

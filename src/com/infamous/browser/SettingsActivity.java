@@ -423,7 +423,7 @@ public class SettingsActivity extends Activity {
 			}
 
 		});
-		flash.setEnabled(API < 19);
+		
 		flash.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 			@Override
@@ -456,23 +456,9 @@ public class SettingsActivity extends Activity {
 					mEditPrefs.putInt(PreferenceConstants.ADOBE_FLASH_SUPPORT, 0);
 					mEditPrefs.commit();
 
-				} else if ((API >= 17) && isChecked) {
-					Utils.createInformativeDialog(
-							SettingsActivity.this,
-							getResources().getString(R.string.title_warning),
-							getResources().getString(
-									R.string.dialog_adobe_unsupported));
-				}
+				
 			}
-
-		});
-		fullscreen.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView,
-					boolean isChecked) {
-				mEditPrefs.putBoolean(PreferenceConstants.FULL_SCREEN, isChecked);
-				mEditPrefs.commit();
+		
 
 			}
 
@@ -551,7 +537,7 @@ public class SettingsActivity extends Activity {
 				} catch (NameNotFoundException e) {
 					flashInstalled = false;
 				}
-				if (!flashInstalled && isChecked) {
+				 if (!flashInstalled && isChecked) {
 					Utils.createInformativeDialog(
 							SettingsActivity.this,
 							getResources().getString(R.string.title_warning),
@@ -561,23 +547,10 @@ public class SettingsActivity extends Activity {
 					mEditPrefs.putInt(PreferenceConstants.ADOBE_FLASH_SUPPORT, 0);
 					mEditPrefs.commit();
 
-				} else if ((API > 17) && isChecked) {
-					Utils.createInformativeDialog(
-							SettingsActivity.this,
-							getResources().getString(R.string.title_warning),
-							getResources().getString(
-									R.string.dialog_adobe_unsupported));
-				}
+				
 			}
 
-		});
-		fullscreen.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-			@Override
-			public void onCheckedChanged(CompoundButton buttonView,
-					boolean isChecked) {
-				mEditPrefs.putBoolean(PreferenceConstants.FULL_SCREEN, isChecked);
-				mEditPrefs.commit();
+		
 
 			}
 
@@ -915,7 +888,7 @@ public class SettingsActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri
-						.parse("http://twitter.com/ACRDevelopment")));
+				.parse("https://plus.google.com/communities/106093160117198923912")));
 				finish();
 			}
 

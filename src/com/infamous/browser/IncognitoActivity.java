@@ -99,9 +99,9 @@ public class IncognitoActivity extends Activity implements BrowserController {
 	private static ListView mDrawerListRight;
 	private static TextView mNewTab;
 	private static ActionBarDrawerToggle mDrawerToggle;
-	private List<LightningView> mWebViews = new ArrayList<LightningView>();
+	private List<InfamousView> mWebViews = new ArrayList<InfamousView>();
 	private static List<Integer> mIdList = new ArrayList<Integer>();
-	private LightningView mCurrentView;
+	private InfamousView mCurrentView;
 	private static int mIdGenerator;
 	private static LightningViewAdapter mTitleAdapter;
 	private static List<HistoryItem> mBookmarkList;
@@ -167,7 +167,7 @@ public class IncognitoActivity extends Activity implements BrowserController {
 		if (mWebViews != null) {
 			mWebViews.clear();
 		} else {
-			mWebViews = new ArrayList<LightningView>();
+			mWebViews = new ArrayList<InfamousView>();
 		}
 
 		mActivity = this;
@@ -830,7 +830,7 @@ public class IncognitoActivity extends Activity implements BrowserController {
 	 * @param view
 	 *            the LightningView to show
 	 */
-	private synchronized void showTab(LightningView view) {
+	private synchronized void showTab(InfamousView view) {
 		if (view == null) {
 			return;
 		}
@@ -908,7 +908,7 @@ public class IncognitoActivity extends Activity implements BrowserController {
 
 	private synchronized void newTab(String url, boolean show) {
 		mIsNewIntent = false;
-		LightningView startingTab = new LightningView(mActivity, url);
+		InfamousView startingTab = new InfamousView(mActivity, url);
 		if (mIdGenerator == 0) {
 			startingTab.resumeTimers();
 		}
@@ -931,7 +931,7 @@ public class IncognitoActivity extends Activity implements BrowserController {
 		}
 
 		int current = mDrawerList.getCheckedItemPosition();
-		LightningView reference = mWebViews.get(position);
+		InfamousView reference = mWebViews.get(position);
 		if (reference == null) {
 			return;
 		}
@@ -1248,14 +1248,14 @@ public class IncognitoActivity extends Activity implements BrowserController {
 		return mIncognitoIcon;
 	}
 
-	public class LightningViewAdapter extends ArrayAdapter<LightningView> {
+	public class LightningViewAdapter extends ArrayAdapter<InfamousView> {
 
 		Context context;
 		int layoutResourceId;
-		List<LightningView> data = null;
+		List<InfamousView> data = null;
 
 		public LightningViewAdapter(Context context, int layoutResourceId,
-				List<LightningView> data) {
+				List<InfamousView> data) {
 			super(context, layoutResourceId, data);
 			this.layoutResourceId = layoutResourceId;
 			this.context = context;
@@ -1293,7 +1293,7 @@ public class IncognitoActivity extends Activity implements BrowserController {
 
 			});
 
-			LightningView web = data.get(position);
+			InfamousView web = data.get(position);
 			holder.txtTitle.setText(web.getTitle());
 			Bitmap favicon = web.getFavicon();
 			holder.favicon.setImageBitmap(favicon);

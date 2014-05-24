@@ -1,7 +1,3 @@
-/*
- * Copyright 2014 A.C.R. Development
- */
-
 package com.infamous.browser;
 
 import java.io.ByteArrayInputStream;
@@ -46,7 +42,7 @@ import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
-public class LightningView {
+public class InfamousView {
 
 	private Title mTitle;
 	private WebView mWebView;
@@ -63,7 +59,7 @@ public class LightningView {
 	private static boolean mWideViewPort;
 	private static AdBlock mAdBlock;
 
-	public LightningView(Activity activity, String url) {
+	public InfamousView(Activity activity, String url) {
 		mActivity = activity;
 		mWebView = new WebView(activity);
 		mTitle = new Title(activity);
@@ -97,7 +93,7 @@ public class LightningView {
 
 		mWebView.setWebChromeClient(new LightningChromeClient(activity));
 		mWebView.setWebViewClient(new LightningWebClient(activity));
-		mWebView.setDownloadListener(new LightningDownloadListener(activity));
+		mWebView.setDownloadListener(new InfamousDownloadListener(activity));
 		mGestureDetector = new GestureDetector(activity,
 				new CustomGestureListener());
 		mWebView.setOnTouchListener(new OnTouchListener() {
