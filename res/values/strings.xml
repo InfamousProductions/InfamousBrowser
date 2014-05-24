@@ -91,12 +91,12 @@
     <string name="title_warning">Warning</string>
     <string name="dialog_adobe_dead">We\'re sorry, Google made some changes, and Adobe Flash no longer works on Android 4.4+</string>
     <string name="dialog_adobe_not_installed">Adobe Flash Player was not detected.\nPlease install Flash Player.</string>
-    <string name="dialog_adobe_unsupported">Adobe Flash does not support Andoid 4.2 and above, and will crash the browser. Please do not report any crashes that occur if you enable Flash.</string>
+    <string name="dialog_adobe_unsupported">Hacked Adobe Flash player is needed for Android 4.4+ from here "http://goo.gl/7GBLh0"</string>
     <string name="title_user_agent">User Agent</string>
     <string name="title_download_location">Download Location</string>
     <string name="title_custom_homepage">Custom Homepage</string>
     <string name="action_webpage">Webpage</string>
-    <string name="dialog_reflow_warning">We\'re sorry, Google made some changes, and Text Reflow no longer works on Android 4.4+</string>
+    <string name="dialog_reflow_warning">Hacked Adobe Flash player is needed for Android 4.4+ from here "http://goo.gl/7GBLh0"</string>
     <string name="title_clear_history">Clear History</string>
     <string name="title_clear_cookies">Clear Cookies</string>
     <string name="dialog_history">Would you like to clear all browser history?</string>
@@ -130,8 +130,8 @@
     <string name="title_flash">Adobe Flash</string>
     <string name="action_manual">Manual</string>
     <string name="action_auto">Auto</string>
-    <string name="action_follow_me">Contact Me</string>
-    <string name="url_twitter">twitter.com/ACRDevelopment</string>
+    <string name="action_follow_me">Contact us</string>
+    <string name="url_twitter">Google+ Infamous development</string>
     <string name="clear_cache">Clear cache</string>
     <string name="message_cache_cleared">Cache Cleared</string>
     <string name="message_import">Bookmarks Were Imported</string>
