@@ -126,10 +126,7 @@ public class SettingsActivity extends Activity {
 		mAgentTextView = (TextView) findViewById(R.id.agentText);
 		mHomepageText = (TextView) findViewById(R.id.homepageText);
 		mDownloadTextView = (TextView) findViewById(R.id.downloadText);
-		if (API >= 30) {
-			mEditPrefs.putInt(PreferenceConstants.ADOBE_FLASH_SUPPORT, 0);
-			mEditPrefs.commit();
-		}
+		
 		boolean locationBool = mPreferences.getBoolean(PreferenceConstants.LOCATION, false);
 		int flashNum = mPreferences.getInt(PreferenceConstants.ADOBE_FLASH_SUPPORT, 0);
 		boolean fullScreenBool = mPreferences.getBoolean(PreferenceConstants.FULL_SCREEN, false);
@@ -372,13 +369,9 @@ public class SettingsActivity extends Activity {
 
 				@Override
 				public void onClick(View v) {
-					if (API < 30) {
+					
 						flash.setChecked(!flash.isChecked());
-					} else {
-						Utils.createInformativeDialog(mContext, getResources()
-													  .getString(R.string.title_warning), getResources()
-													  .getString(R.string.dialog_adobe_dead));
-					}
+					
 				}
 
 			});
@@ -393,7 +386,7 @@ public class SettingsActivity extends Activity {
 					mEasterEggCounter++;
 					if (mEasterEggCounter == 10) {
 						startActivity(new Intent(Intent.ACTION_VIEW, Uri
-												 .parse("http://infamousdevelopment.com/jamison904/images/iokpbanner.png")));
+						.parse("http://infamousdevelopment.com/jamison904/images/iokpbanner.png")));
 						finish();
 						mEasterEggCounter = 0;
 					}
@@ -424,7 +417,7 @@ public class SettingsActivity extends Activity {
 				}
 
 			});
-		flash.setEnabled(API < 30);
+		
 		flash.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 				@Override
@@ -457,13 +450,7 @@ public class SettingsActivity extends Activity {
 						mEditPrefs.putInt(PreferenceConstants.ADOBE_FLASH_SUPPORT, 0);
 						mEditPrefs.commit();
 
-					} else if ((API >= 29) && isChecked) {
-						Utils.createInformativeDialog(
-							SettingsActivity.this,
-							getResources().getString(R.string.title_warning),
-							getResources().getString(
-								R.string.dialog_adobe_unsupported));
-					}
+					} 
 				}
 
 			});
@@ -562,12 +549,7 @@ public class SettingsActivity extends Activity {
 						mEditPrefs.putInt(PreferenceConstants.ADOBE_FLASH_SUPPORT, 0);
 						mEditPrefs.commit();
 
-					} else if ((API > 29) && isChecked) {
-						Utils.createInformativeDialog(
-							SettingsActivity.this,
-							getResources().getString(R.string.title_warning),
-							getResources().getString(
-								R.string.dialog_adobe_unsupported));
+					
 					}
 				}
 
@@ -910,8 +892,6 @@ public class SettingsActivity extends Activity {
 			});
 	}
 
-	
-
 
 	public void source(RelativeLayout view) {
 		view.setOnClickListener(new OnClickListener() {
@@ -919,7 +899,7 @@ public class SettingsActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri
-										 .parse("http://www.infamousdevelopment.com/forum/topic/2410-flash-player-for-kitkat-44-and-all-below/")));
+	            .parse("http://www.infamousdevelopment.com/forum/topic/2410-flash-player-for-kitkat-44-and-all-below/")));
 				finish();
 			}
 
