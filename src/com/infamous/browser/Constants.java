@@ -1,3 +1,7 @@
+/*
+ * Copyright 2014 A.C.R. Development
+ * & Infamous Development
+ */
 package com.infamous.browser;
 
 import android.os.Environment;
