@@ -130,8 +130,10 @@
     <string name="title_flash">Adobe Flash</string>
     <string name="action_manual">Manual</string>
     <string name="action_auto">Auto</string>
-    <string name="action_follow_me">Download Flash player Downloader app</string>
-    <string name="url_twitter">Download and install the my app from here. Then click and install the flash player for your Android version.</string>
+    <string name="action_flash">Download Flash player Downloader app</string>
+    <string name="url_flash">Download and install the my app from here. Then click and install the flash player for your Android version.</string>
+<string name="action_playstore">Infamous Productions</string>
+    <string name="url_apps">Check out our other apps on the Play Store.</string>
     <string name="clear_cache">Clear cache</string>
     <string name="message_cache_cleared">Cache Cleared</string>
     <string name="message_import">Bookmarks Were Imported</string>
