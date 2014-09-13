@@ -338,7 +338,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
-                        android:text="@string/action_flash"
+                        android:text="@string/action_follow_me"
                         android:textAppearance="?android:attr/textAppearanceMedium" />
 
                     <TextView
@@ -346,7 +346,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
-                        android:text="@string/url_flash"
+                        android:text="@string/url_twitter"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="@color/light" />
                 </LinearLayout>

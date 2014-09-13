@@ -120,7 +120,7 @@
     <string name="action_homepage">Default</string>
     <string name="action_back">Back</string>
     <string name="action_find">Find in Page</string>
-    <string name="download_pending">Starting download</string>
+    <string name="download_pending">Starting download\u2026</string>
     <string name="cannot_download">Can only download \"http\" or \"https\" URLs.</string>
     <string name="download_no_sdcard_dlg_title" >No SD card</string>
     <string name="download_no_sdcard_dlg_msg" >USB storage is required to download the file.</string>
@@ -130,8 +130,8 @@
     <string name="title_flash">Adobe Flash</string>
     <string name="action_manual">Manual</string>
     <string name="action_auto">Auto</string>
-    <string name="action_follow_me">Download Flash player Downloader app</string>
-    <string name="url_twitter">Download and install the my app from here. Then click and install the flash player for your Android version.</string>
+    <string name="action_follow_me">Download Flash player</string>
+    <string name="url_twitter">Garb it from our site, Infamousdevelopment.com</string>
     <string name="clear_cache">Clear cache</string>
     <string name="message_cache_cleared">Cache Cleared</string>
     <string name="message_import">Bookmarks Were Imported</string>

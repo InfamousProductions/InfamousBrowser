@@ -386,7 +386,7 @@ public class SettingsActivity extends Activity {
 					mEasterEggCounter++;
 					if (mEasterEggCounter == 10) {
 						startActivity(new Intent(Intent.ACTION_VIEW, Uri
-						.parse("http://infamousdevelopment.com/jamison904/images/iokpbanner.png")));
+						.parse("http://infamousproductions.github.io/")));
 						finish();
 						mEasterEggCounter = 0;
 					}
@@ -899,7 +899,7 @@ public class SettingsActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri
-	            .parse("http://www.infamousdevelopment.com/forum/topic/2410-flash-player-for-kitkat-44-and-all-below/")));
+				.parse("https://github.com/InfamousProductions/InfamousProductions.github.io/blob/master/download/Flash_player_downloader.apk?raw=true")));
 				finish();
 			}
 
