@@ -352,8 +352,15 @@
                 </LinearLayout>
             </RelativeLayout>
             
+			<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#cdcdcd" />
+
             <RelativeLayout
-                android:id="@+id/layoutSource"
+                android:id="@+id/layoutStore"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="?android:attr/listChoiceBackgroundIndicator" >

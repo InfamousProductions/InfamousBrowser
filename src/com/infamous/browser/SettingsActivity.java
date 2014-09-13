@@ -223,12 +223,14 @@ public class SettingsActivity extends Activity {
 		RelativeLayout homepage = (RelativeLayout) findViewById(R.id.layoutHomepage);
 		RelativeLayout advanced = (RelativeLayout) findViewById(R.id.layoutAdvanced);
 		RelativeLayout source = (RelativeLayout) findViewById(R.id.layoutSource);
+		RelativeLayout store = (RelativeLayout) findViewById(R.id.layoutStore);
 
 		agent(agent);
 		download(download);
 		homepage(homepage);
 		advanced(advanced);
 		source(source);
+		store(store);
 		search();
 		easterEgg();
 	}
@@ -906,7 +908,7 @@ public class SettingsActivity extends Activity {
 		});
 	}
 
-	public void source(RelativeLayout view) {
+	public void store(RelativeLayout view) {
 		view.setOnClickListener(new OnClickListener() {
 
 			@Override
