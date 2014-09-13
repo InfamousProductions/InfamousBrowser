@@ -107,7 +107,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 	private static List<Integer> mIdList = new ArrayList<Integer>();
 	private InfamousView mCurrentView;
 	private static int mIdGenerator;
-	private static LightningViewAdapter mTitleAdapter;
+	private static InfamousViewAdapter mTitleAdapter;
 	private static List<HistoryItem> mBookmarkList;
 	private static BookmarkViewAdapter mBookmarkAdapter;
 	private static AutoCompleteTextView mSearch;
@@ -202,7 +202,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 		mHomepage = mPreferences.getString(PreferenceConstants.HOMEPAGE,
 				Constants.HOMEPAGE);
 
-		mTitleAdapter = new LightningViewAdapter(this, R.layout.tab_list_item,
+		mTitleAdapter = new InfamousViewAdapter(this, R.layout.tab_list_item,
 				mWebViews);
 		mDrawerList.setAdapter(mTitleAdapter);
 		mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
@@ -856,11 +856,11 @@ public class BrowserActivity extends Activity implements BrowserController {
 	}
 
 	/**
-	 * displays the WebView contained in the LightningView Also handles the
+	 * displays the WebView contained in the InfamousView Also handles the
 	 * removal of previous views
 	 * 
 	 * @param view
-	 *            the LightningView to show
+	 *            the InfamousView to show
 	 */
 	private synchronized void showTab(InfamousView view) {
 		if (view == null) {
@@ -1001,7 +1001,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 						PreferenceConstants.CLEAR_CACHE_EXIT, false)
 						&& mCurrentView != null) {
 					mCurrentView.clearCache(true);
-					Log.i("Lightning", "Cache Cleared");
+					Log.i("Infamous", "Cache Cleared");
 
 				}
 				if (reference != null) {
@@ -1023,7 +1023,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 			moveTaskToBack(true);
 		}
 
-		Log.i("Lightning", "deleted tab");
+		Log.i("Infamous", "deleted tab");
 	}
 
 	@Override
@@ -1032,7 +1032,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 			if (mPreferences.getBoolean(PreferenceConstants.CLEAR_CACHE_EXIT,
 					false) && mCurrentView != null) {
 				mCurrentView.clearCache(true);
-				Log.i("Lightning", "Cache Cleared");
+				Log.i("Infamous", "Cache Cleared");
 
 			}
 			mCurrentView = null;
@@ -1058,7 +1058,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 			mDrawerLayout.closeDrawer(mDrawerRight);
 		} else {
 			if (mCurrentView != null) {
-				Log.i("Lightning", "onBackPressed");
+				Log.i("Infamous", "onBackPressed");
 				if (mCurrentView.canGoBack()) {
 					if (!mCurrentView.isShown()) {
 						onHideCustomView();
@@ -1069,7 +1069,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 					deleteTab(mDrawerList.getCheckedItemPosition());
 				}
 			} else {
-				Log.e("Lightning Browser",
+				Log.e("Infamous Browser",
 						"So madness. Much confusion. Why happen.");
 				super.onBackPressed();
 			}
@@ -1079,7 +1079,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		Log.i("Lightning", "onPause");
+		Log.i("Infamous", "onPause");
 		if (mCurrentView != null) {
 			mCurrentView.pauseTimers();
 			mCurrentView.onPause();
@@ -1107,7 +1107,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 
 	@Override
 	protected void onDestroy() {
-		Log.i("Lightning", "onDestroy");
+		Log.i("Infamous", "onDestroy");
 		if (mHistoryDatabase != null) {
 			if (mHistoryDatabase.isOpen())
 				mHistoryDatabase.close();
@@ -1121,32 +1121,32 @@ public class BrowserActivity extends Activity implements BrowserController {
 
 	@Override
 	protected void onPostResume() {
-		Log.i("Lightning", "onPostResume");
+		Log.i("Infamous", "onPostResume");
 		super.onPostResume();
 	}
 
 	@Override
 	protected void onRestart() {
-		Log.i("Lightning", "onRestart");
+		Log.i("Infamous", "onRestart");
 		super.onRestart();
 	}
 
 	@Override
 	protected void onStart() {
-		Log.i("Lightning", "onStart");
+		Log.i("Infamous", "onStart");
 		super.onStart();
 	}
 
 	@Override
 	protected void onStop() {
-		Log.i("Lightning", "onStop");
+		Log.i("Infamous", "onStop");
 		super.onStop();
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		Log.i("Lightning", "onResume");
+		Log.i("Infamous", "onResume");
 		if (SettingsController.getClearHistory()) {
 		}
 		if (mSearchAdapter != null) {
@@ -1329,13 +1329,13 @@ public class BrowserActivity extends Activity implements BrowserController {
 		return new BitmapDrawable(getResources(), bm);
 	}
 
-	public class LightningViewAdapter extends ArrayAdapter<InfamousView> {
+	public class InfamousViewAdapter extends ArrayAdapter<InfamousView> {
 
 		Context context;
 		int layoutResourceId;
 		List<InfamousView> data = null;
 
-		public LightningViewAdapter(Context context, int layoutResourceId,
+		public InfamousViewAdapter(Context context, int layoutResourceId,
 				List<InfamousView> data) {
 			super(context, layoutResourceId, data);
 			this.layoutResourceId = layoutResourceId;
@@ -1347,20 +1347,20 @@ public class BrowserActivity extends Activity implements BrowserController {
 		public View getView(final int position, View convertView,
 				ViewGroup parent) {
 			View row = convertView;
-			LightningViewHolder holder = null;
+			InfamousViewHolder holder = null;
 			if (row == null) {
 				LayoutInflater inflater = ((Activity) context)
 						.getLayoutInflater();
 				row = inflater.inflate(layoutResourceId, parent, false);
 
-				holder = new LightningViewHolder();
+				holder = new InfamousViewHolder();
 				holder.txtTitle = (TextView) row.findViewById(R.id.text1);
 				holder.favicon = (ImageView) row.findViewById(R.id.favicon1);
 				holder.exit = (ImageView) row.findViewById(R.id.delete1);
 				holder.exit.setTag(position);
 				row.setTag(holder);
 			} else {
-				holder = (LightningViewHolder) row.getTag();
+				holder = (InfamousViewHolder) row.getTag();
 			}
 
 			holder.exit.setOnClickListener(new OnClickListener() {
@@ -1379,7 +1379,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 			return row;
 		}
 
-		class LightningViewHolder {
+		class InfamousViewHolder {
 			TextView txtTitle;
 			ImageView favicon;
 			ImageView exit;
@@ -1600,11 +1600,11 @@ public class BrowserActivity extends Activity implements BrowserController {
 					cursor.close();
 					cursor = null;
 				} catch (IllegalStateException e) {
-					Log.e("Lightning", "IllegalStateException in updateHistory");
+					Log.e("Infamous", "IllegalStateException in updateHistory");
 				} catch (NullPointerException e) {
-					Log.e("Lightning", "NullPointerException in updateHistory");
+					Log.e("Infamous", "NullPointerException in updateHistory");
 				} catch (SQLiteException e) {
-					Log.e("Lightning", "SQLiteException in updateHistory");
+					Log.e("Infamous", "SQLiteException in updateHistory");
 				}
 			}
 		};
@@ -1945,7 +1945,7 @@ public class BrowserActivity extends Activity implements BrowserController {
 		if (mCustomView == null || mCustomViewCallback == null
 				|| mCurrentView == null)
 			return;
-		Log.i("Lightning", "onHideCustomView");
+		Log.i("Infamous", "onHideCustomView");
 		mCurrentView.setVisibility(View.VISIBLE);
 		mCustomView.setKeepScreenOn(false);
 		setFullscreen(mPreferences.getBoolean(

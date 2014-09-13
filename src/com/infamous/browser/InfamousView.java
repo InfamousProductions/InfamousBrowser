@@ -95,8 +95,8 @@ public class InfamousView {
 		mWebView.setScrollbarFadingEnabled(true);
 		mWebView.setSaveEnabled(true);
 
-		mWebView.setWebChromeClient(new LightningChromeClient(activity));
-		mWebView.setWebViewClient(new LightningWebClient(activity));
+		mWebView.setWebChromeClient(new InfamousChromeClient(activity));
+		mWebView.setWebViewClient(new InfamousWebClient(activity));
 		mWebView.setDownloadListener(new InfamousDownloadListener(activity));
 		mGestureDetector = new GestureDetector(activity,
 				new CustomGestureListener());
@@ -155,7 +155,7 @@ public class InfamousView {
 		switch (mPreferences.getInt(PreferenceConstants.SEARCH, 1)) {
 		case 0:
 			// CUSTOM SEARCH
-			home = home + "file:///android_asset/lightning.png";
+			home = home + "file:///android_asset/infamous.png";
 			home = home + HomepageVariables.MIDDLE;
 			home = home
 					+ mPreferences.getString(PreferenceConstants.SEARCH_URL,
@@ -170,7 +170,7 @@ public class InfamousView {
 			break;
 		case 2:
 			// ANDROID SEARCH;
-			home = home + "file:///android_asset/lightning.png";
+			home = home + "file:///android_asset/infamous.png";
 			home = home + HomepageVariables.MIDDLE;
 			home = home + Constants.ANDROID_SEARCH;
 			break;
@@ -536,11 +536,11 @@ public class InfamousView {
 			return "";
 	}
 
-	public class LightningWebClient extends WebViewClient {
+	public class InfamousWebClient extends WebViewClient {
 
 		Context mActivity;
 
-		LightningWebClient(Context context) {
+		InfamousWebClient(Context context) {
 			mActivity = context;
 		}
 
@@ -610,7 +610,7 @@ public class InfamousView {
 									String user = name.getText().toString();
 									String pass = password.getText().toString();
 									handler.proceed(user.trim(), pass.trim());
-									Log.i("Lightning", "Request Login");
+									Log.i("Infamous", "Request Login");
 
 								}
 							})
@@ -760,11 +760,11 @@ public class InfamousView {
 		}
 	}
 
-	public class LightningChromeClient extends WebChromeClient {
+	public class InfamousChromeClient extends WebChromeClient {
 
 		Context mActivity;
 
-		LightningChromeClient(Context context) {
+		InfamousChromeClient(Context context) {
 			mActivity = context;
 		}
 

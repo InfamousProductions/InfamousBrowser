@@ -905,4 +905,17 @@ public class SettingsActivity extends Activity {
 
 		});
 	}
+
+	public void source(RelativeLayout view) {
+		view.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri
+				.parse("https://play.google.com/store/apps/developer?id=Infamous+Productions")));
+				finish();
+			}
+
+		});
+	}
 }
